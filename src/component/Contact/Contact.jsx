@@ -14,7 +14,7 @@ const Contact = () => {
       </div>      
       <div className=' h-[206px] pl-6 mt-2'>
         <label htmlFor="feedback" className='block text-gray-700'>Feedback & comments: </label>
-        <textarea rows={5} cols={40} id='feedback' name='feedback' placeholder='Feel free :) ' className='border resize-none border-sky-200 pl-6 mt-2 pt-2 rounded text-gray-700 focus:outline-emerald-600'></textarea>
+        <textarea id='feedback' name='feedback' placeholder='Feel free :) ' cols={30} rows={5} className='w-[90%] border resize-none border-sky-200 pl-6 mt-2 pt-2 rounded text-gray-700 focus:outline-emerald-600'></textarea>
       </div>     
        <div className='border h-[106px] flex flex-col items-center p-2 bg-gray-600 text-white'>
         <button type='submit' className='bg-teal-600 text-white rounded pl-12 pr-12 pt-4 pb-4 w-full sm:w-[440px] focus:scale-95 hover:bg-teal-500'> Submit </button>
