@@ -88,7 +88,7 @@ const ProfileSkills = () => {
       </p>
       <ul className='flex flex-wrap gap-10 m-auto p-4 justify-center items-center h-[auto]'>
         {storeSkills.map((item) => (
-          <li className='w-[300px] h-[400px] p-4 flex-shrink-0 border shadow-lg rounded-xl flex flex-col gap-4 justify-center items-center' key={item.id}>
+          <li className='w-[300px] h-[400px] p-4 flex-shrink-0 shadow-xl rounded-xl flex flex-col gap-4 justify-center items-center' key={item.id}>
             {item.icons}
             <p className="text-gray-600 line-clamp-4">{item.about}</p>
             <a href={item.link} target='_blank' className='text-violet-600'>More Details..</a>

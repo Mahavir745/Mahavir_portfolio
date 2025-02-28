@@ -63,7 +63,7 @@ const SubProject = ({ projectName }) => {
     className='h-auto w-full lg:justify-center p-4 flex mt-2 items-center gap-4 overflow-x-scroll pl-2 pr-2 removeScroll popupAnimation'>
       {
         toggleData.map((item) => (
-          <div className='border sm:w-[300px] bg-slate-100 sm:h-[340px] w-48 p-4 flex gap-4 flex-col items-center justify-center rounded-md relative flex-shrink-0' key={item.id}>
+          <div className='shadow-xl sm:w-[300px] bg-slate-100 sm:h-[340px] w-48 p-4 flex gap-4 flex-col items-center justify-center rounded-md relative flex-shrink-0' key={item.id}>
             <span className='absolute top-0 left-0 text-[18px] sm:text-[34px]'>
               {projectName === "React" ? <FaReact className='text-violet-600' /> : <DiJavascript1 className='text-violet-600' />}
             </span>
@@ -75,7 +75,7 @@ const SubProject = ({ projectName }) => {
           </div>
         ))
       }
-      <div className='flex-shrink-0'>
+      <div className='flex-shrink-0 shadow-xl'>
         <Link to={"/project"} className='flex items-center gap-2 bg-violet-400 p-2 pl-4 rounded-full'>
           <p className='font-medium text-white'>View all</p>
           <IoArrowForwardOutline />

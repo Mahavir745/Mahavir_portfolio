@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <form className='w-[500px] m-auto mt-8 mb-8 rounded border p-2'>
+    <form className='w-full sm:w-[500px] m-auto mt-8 mb-8 rounded sm:shadow-xl p-2' action="https://formspree.io/f/xayrrwoj" target='_blank' method='POST'>
       <h1 className='text-2xl p-2 text-center text-white bg-teal-600'>Feedback & Comment</h1>
       <div className=' h-[106px] pl-6 mt-2'>
         <label htmlFor="username" className='block text-gray-700'>Name: </label>
@@ -17,7 +17,7 @@ const Contact = () => {
         <textarea rows={5} cols={40} id='feedback' name='feedback' placeholder='Feel free :) ' className='border resize-none border-sky-200 pl-6 mt-2 pt-2 rounded text-gray-700 focus:outline-emerald-600'></textarea>
       </div>     
        <div className='border h-[106px] flex flex-col items-center p-2 bg-gray-600 text-white'>
-        <button type='submit' className='bg-teal-600 text-white rounded pl-12 pr-12 pt-4 pb-4 w-[440px] focus:scale-95 hover:bg-teal-500'> Submit </button>
+        <button type='submit' className='bg-teal-600 text-white rounded pl-12 pr-12 pt-4 pb-4 w-full sm:w-[440px] focus:scale-95 hover:bg-teal-500'> Submit </button>
         <p className='text-center mt-2'>Comments and feedback are end-to-end encrypted.</p>
       </div>
 
