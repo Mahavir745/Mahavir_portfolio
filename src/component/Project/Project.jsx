@@ -3,6 +3,9 @@ import Container from './Container'
 import upcomming from "../../assets/assest05.jpg"
 import qrverify from "../../assets/assest08.png"
 import surprise_gift from "../../assets/assest07.png"
+import expense from "../../assets/assest15.png"
+import taskManagement from "../../assets/assest16.png"
+
 
 
 
@@ -10,24 +13,24 @@ const Project = () => {
 
   const updateProjects = [
     {
-      image: qrverify,
+      image: taskManagement,
       id: "UP1",
-      updateDate: "20 feb 2024"
+      updateDate: "Upcoming"
+    },
+    {
+      image: qrverify,
+      id: "UP2",
+      updateDate: "Upcoming"
     },
     {
       image: surprise_gift,
-      id: "UP2",
-      updateDate: "20 feb 2024"
-    },
-    {
-      image: upcomming,
       id: "UP3",
-      updateDate: "20 feb 2024"
+      updateDate: "Upcoming"
     },
     {
-      image: upcomming,
+      image: expense,
       id: "UP4",
-      updateDate: "20 feb 2024"
+      updateDate: "Upcoming"
     },
   ]
 

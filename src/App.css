@@ -51,7 +51,7 @@
 }
 
 .slideAnimate{
-   animation: slide 8s linear infinite alternate-reverse;
+   animation: slide 60s linear infinite alternate;
    position: relative;
 }
 

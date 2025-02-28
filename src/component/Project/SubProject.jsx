@@ -4,6 +4,14 @@ import { FaReact } from 'react-icons/fa'
 import { IoArrowForwardOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import upcoming from "../../assets/assest05.jpg"
+import js1 from "../../assets/assest09.png"
+import js2 from "../../assets/assest10.png"
+import js3 from "../../assets/assest11.png"
+import React1 from "../../assets/assest12.png"
+import React2 from "../../assets/assest13.png"
+import React3 from "../../assets/assest14.png"
+
+
 
 const SubProject = ({ projectName }) => {
 
@@ -12,43 +20,43 @@ const SubProject = ({ projectName }) => {
     {
       project_name: "TimeStramp",
       id: "js1",
-      link: "",
-      img: upcoming,
+      link: "https://mahavir745.github.io/Timestamp_convertor/",
+      img: js1,
       section: "Javascript"
     },
     {
       project_name: "WeatherAPI",
       id: "js2",
-      link: "",
-      img: upcoming,
+      link: "https://mahavir745.github.io/Weather-API/",
+      img: js2,
       section: "Javascript"
     },
     {
       project_name: "Trivia Game",
       id: "js3",
-      link: "",
-      img: upcoming,
+      link: "https://mahavir745.github.io/trivia_game/",
+      img: js3,
       section: "Javascript"
     },
     {
       project_name: "TodoList",
       id: "React1",
-      link: "",
-      img: upcoming,
+      link: "https://todolist-phi-snowy.vercel.app/ ",
+      img: React1,
       section: "React"
     },
     {
-      project_name: "Post Generator",
+      project_name: "User Profile",
       id: "React2",
-      link: "",
-      img: upcoming,
+      link: "https://user-profile-three-sigma.vercel.app/",
+      img: React2,
       section: "React"
     },
     {
-      project_name: "Task-manager",
+      project_name: ",Post Generator",
       id: "React3",
-      link: "",
-      img: upcoming,
+      link: "https://post-generator-rho.vercel.app/",
+      img: React3,
       section: "React"
     }
   ];
