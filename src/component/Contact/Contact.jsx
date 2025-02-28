@@ -22,7 +22,7 @@ const Contact = () => {
       </div>
 
       <p className=' p-4'>
-        <span className='text-red-700 font-semibold'>Note:</span> All information is private. Please keep it confidential. For inquiries, use the feedback form. <br/>Thank you.<br/><span className='text-teal-600'>Managed by Mveer745.</span></p>
+        <span className='text-red-700 font-semibold'>Note:</span> All information is private. Please keep it confidential. For inquiries, use the feedback form. <br/>Thank you.<br/><span className='text-teal-600'>Managed by Mahavir745.</span></p>
     </form>
   )
 }
