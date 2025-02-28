@@ -15,9 +15,9 @@ const ProjectItems = ({ project }) => {
           <p className='  text-[13px] overflowContainer p-4  text-gray-700'>{project.details}</p>
         </details>
         <img src={project.img} className='h-[200px] rounded-md' alt="" />
-        <div className='text-white flex justify-center items-center gap-6  p-5 h-[100px]' >
+        <div className='text-white flex justify-center items-center gap-6  p-5 h-[100px] ' >
           <a href={project.live_link} target='_blank'><button className='bg-teal-700 pl-8 pr-8 pt-2 pb-2 rounded flex items-center gap-2'>Live <RiLiveLine /></button></a>
-          <a href={project.source_link} target='_blank'><button className='bg-blue-700 pl-8 pr-8 pt-2 pb-2 rounded'>Source Code</button></a>
+          <a href={project.source_link} target='_blank'><button className='bg-blue-700 pl-8 pr-8 pt-2 pb-2 rounded overflow-hidden'> Code</button></a>
         </div>
       </div>
     </div>
