@@ -1,0 +1,65 @@
+.spinComponent {
+  position: relative;
+}
+
+.spinComponent:hover{
+  animation: spin 1.8s linear 1;
+}
+
+@keyframes spin {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+.popupAnimation{
+  animation: popupAnimation .6s linear;
+  position: relative;
+  transition: all .2s linear;
+}
+
+@keyframes popupAnimation {
+  0%{
+    transform: scale(.95);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.removeScroll::-webkit-scrollbar{
+  display: none;
+}
+
+.upDownAnimate{
+  position: relative;
+  animation: upDownAnimate 1s linear infinite alternate;
+  top:-10px;
+}
+
+@keyframes upDownAnimate {
+  0%{
+    transform: translateY(0px);
+
+  }
+  100%{
+    transform: translateY(10px);
+  }
+}
+
+.slideAnimate{
+   animation: slide 8s linear infinite alternate-reverse;
+   position: relative;
+}
+
+@keyframes slide {
+  0%{
+    left: 0%;
+  }
+  100%{
+    left: -280%;
+  }
+}
