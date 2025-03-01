@@ -79,7 +79,7 @@ const SubProject = ({ projectName }) => {
               <img src={item.img} alt="" />
             </div>
             <p className='font-medium text-gray-500'>{item.project_name}</p>
-            <a className='text-sky-400' href='/' target='_blank'>Demo</a>
+            <a className='text-sky-400' href={item.link} target='_blank'>Demo</a>
           </div>
         ))
       }
