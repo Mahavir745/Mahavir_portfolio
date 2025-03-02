@@ -42,7 +42,7 @@ const ProfileAbout = () => {
           </div>
           <div className='font-bold'>
             <p className='text-2xl text-violet-500'>Graduation</p>
-            <p className='text-violet-500'>Pursuing</p>
+            <p className='text-violet-500'>Not stated Yet</p>
           </div>
          </div>
       </div>
