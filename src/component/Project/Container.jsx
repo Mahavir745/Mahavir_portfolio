@@ -7,6 +7,8 @@ import React1 from "../../assets/assest12.png"
 import React2 from "../../assets/assest13.png"
 import React3 from "../../assets/assest14.png"
 import upcoming from "../../assets/assest05.jpg";
+import expense from "../../assets/assest15.png"
+import taskManagement from "../../assets/assest16.png"
 import { FaAngleDoubleDown, FaAngleDoubleUp } from 'react-icons/fa'
 
 
@@ -45,7 +47,7 @@ const Container = () => {
     {
       id: "project4",
       title: "TodoList",
-      details: "",
+      details: "I built a to-do list app using React. It lets users add and delete tasks easily. The app is simple to use and helps me practice React basics, like managing state and creating components. It’s a great project to learn how to make interactive web apps.",
       live_link: "https://todolist-phi-snowy.vercel.app/ ",
       source_link: "https://github.com/Mahavir745/todolist",
       img: React1,
@@ -54,7 +56,7 @@ const Container = () => {
     {
       id: "project5",
       title: "User-Profile",
-      details: "",
+      details: "login and signup system with user-friendly validation. It allows new users to register and existing users to log in securely. Upon successful login, users are redirected to their unique profile page. The project demonstrates authentication, form validation, and routing in React.",
       live_link: "https://user-profile-three-sigma.vercel.app/",
       source_link: "https://github.com/Mahavir745/userProfile",
       img: React2,
@@ -63,7 +65,7 @@ const Container = () => {
     {
       id: "project6",
       title: "Post Generator",
-      details: "",
+      details: "I created a post generator using React JS and Bootstrap, where users can easily add posts by filling out a form. The app also loads some default posts from an API, so users can see existing posts when they visit the site.",
       live_link: "https://post-generator-rho.vercel.app/",
       source_link: "https://github.com/Mahavir745/post-generator",
       img: React3,
@@ -72,19 +74,19 @@ const Container = () => {
     {
       id: "project7",
       title: "Expense Tracker",
-      details: "",
-      live_link: "",
-      source_link: "",
-      img: upcoming,
+      details: "I built an expense tracker app with React.js, featuring an attractive login/signup process and a user-friendly dashboard. Users can add money, track their expenses, and easily manage their finances through a simple input section.",
+      live_link: "https://expense-tracker-gray-kappa.vercel.app/",
+      source_link: "https://github.com/Mahavir745/expense_tracker",
+      img: expense,
       section: "react"
     },
     {
       id: "project7",
       title: "Task Management",
-      details: "",
-      live_link: "",
-      source_link: "",
-      img: upcoming,
+      details: "I created a React.js task manager with features like adding, editing, deleting, and completing tasks, filtering by priority and status, progress tracking, and pagination for efficient task management.",
+      live_link: "https://task-manager-swart-six.vercel.app/",
+      source_link: "https://github.com/Mahavir745/task-manager",
+      img: taskManagement,
       section: "react"
     },
     {

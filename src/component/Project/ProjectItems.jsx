@@ -11,8 +11,8 @@ const ProjectItems = ({ project }) => {
       </div>
       <div className='p-2 flex flex-col justify-center gap-2'>
         <h1 className='text-2xl text-center text-teal-900 font-semibold'>{project.title}</h1>
-        <details className='text-center text-blue-800 font-semibold text-[14px] h-[100px] cursor-pointer ' open>
-          <p className='  text-[13px] overflowContainer p-4  text-gray-700'>{project.details}</p>
+        <details className='text-center text-blue-800 font-semibold text-[14px] h-[100px] cursor-pointer flex flex-col overflow-y-scroll overFlowControl' open>
+          <p className='  text-[13px] p-4  text-gray-700'>{project.details}</p>
         </details>
         <img src={project.img} className='h-[200px] rounded-md' alt="" />
         <div className='text-white flex justify-center items-center gap-6  p-5 h-[100px] ' >

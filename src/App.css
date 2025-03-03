@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.overFlowControl::-webkit-scrollbar{
+  display: none;
+}
+
 .spinComponent:hover{
   animation: spin 1.8s linear 1;
 }

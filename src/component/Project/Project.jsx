@@ -11,9 +11,14 @@ const Project = () => {
   const [screenSize, setScreenSize] = useState(window.outerWidth)
   const updateProjects = [
     {
+      image: expense,
+      id: "UP4",
+      updateDate: "uploaded Mar 3"
+    },
+    {
       image: taskManagement,
-      id: "UP1",
-      updateDate: "Upcoming"
+      id: "UP5",
+      updateDate: "uploaded Mar 3"
     },
     {
       image: qrverify,
@@ -23,16 +28,6 @@ const Project = () => {
     {
       image: surprise_gift,
       id: "UP3",
-      updateDate: "Upcoming"
-    },
-    {
-      image: expense,
-      id: "UP4",
-      updateDate: "Upcoming"
-    },
-    {
-      image: taskManagement,
-      id: "UP5",
       updateDate: "Upcoming"
     },
     {
