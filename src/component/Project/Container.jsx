@@ -6,6 +6,7 @@ import js3 from "../../assets/assest11.png"
 import React1 from "../../assets/assest12.png"
 import React2 from "../../assets/assest13.png"
 import React3 from "../../assets/assest14.png"
+import React4 from "../../assets/assest07.png"
 import upcoming from "../../assets/assest05.jpg";
 import expense from "../../assets/assest15.png"
 import taskManagement from "../../assets/assest16.png"
@@ -92,10 +93,10 @@ const Container = () => {
     {
       id: "project8",
       title: "Surprise Gift",
-      details: "",
-      live_link: "",
-      source_link: "",
-      img: upcoming,
+      details: "This app helps you easily create surprise gift cards for your friends and loved ones 🎁. Just enter the details, and personalized gift cards are generated instantly in a simple and fun way ✨",
+      live_link: "https://gift-card-flame-seven.vercel.app/",
+      source_link: "https://github.com/Mahavir745/gift-card",
+      img: React4,
       section: "react"
     },
     {

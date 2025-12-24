@@ -96,7 +96,7 @@ const ProfileSkills = () => {
         ))}
       </ul>
       <div className="relative">
-        <button onClick={(e) => handlemoreBtn(e.target.innerText)} className=' pt-2 pb-2 pl-6 pr-6 text-violet-700 flex items-center hover:font-bold gap-1 bottom-0 bg-violet-200 m-auto mb-2 rounded-md upDownAnimate'
+        <button onClick={(e) => handlemoreBtn(e.target.innerText)} className=' pt-2 pb-2 pl-6 pr-6 text-violet-700 flex items-center hover:font-bold gap-1 bottom-0 bg-violet-200 m-auto mb-2 rounded-md upDownAnimate cursor-pointer'
           id={arrayLength > skillData.length ? "Less":"More"} 
         >
           {arrayLength > skillData.length ? <span >Less</span> : <span >More</span>}

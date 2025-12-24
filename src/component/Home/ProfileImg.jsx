@@ -9,7 +9,7 @@ const ProfileImg = () => {
       </div>
       <div className='text-center p-3 w-[300px]'>
         <h1 className='text-4xl'>Mahavir Kumar Mahato</h1>
-        <p className='text-right text-[20px] mt-4 text-indigo-900 font-semibold'>Frontend Developer</p>
+        <p className='text-right text-[20px] mt-4 text-indigo-900 font-semibold'>Software Engineer</p>
       </div>
     </div>
   )
