@@ -287,7 +287,7 @@ function HeroSection() {
         className="a-up"
         style={{ animationDelay: ".16s", fontSize: "clamp(15px, 1.8vw, 18px)", lineHeight: 1.7, color: "var(--ink2)", maxWidth: 520, marginBottom: 40 }}
       >
-        Full-stack developer crafting high-performance web experiences with{" "}
+        Software developer crafting high-performance web experiences with{" "}
         <strong style={{ color: "var(--ink)" }}>React</strong>,{" "}
         <strong style={{ color: "var(--ink)" }}>Node.js</strong> &amp;{" "}
         <strong style={{ color: "var(--ink)" }}>modern tooling</strong>.
@@ -307,7 +307,7 @@ function HeroSection() {
 
       {/* Tech stack pills */}
       <div className="a-up" style={{ animationDelay: ".30s", display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: 48 }}>
-        {["React", "Tailwind CSS", "Node.js", "Python", "MongoDB"].map(tech => (
+        {["React", "Tailwind CSS", "Node.js", "Python"].map(tech => (
           <span
             key={tech}
             style={{ padding: "5px 14px", borderRadius: 100, fontSize: 12, fontWeight: 500, background: "var(--surface)", border: "1px solid var(--line)", color: "var(--ink2)" }}

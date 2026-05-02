@@ -25,8 +25,11 @@
 
 import { createContext, useContext, useState } from "react";
 
-// ── Change this to your preferred password ──────────────────
-const ADMIN_PASSWORD = "mahavir@745";
+// ── Admin password ──────────────────────────────────────────
+// Stored in .env file — never hardcode a password in source code.
+// To change your password: update VITE_ADMIN_PASSWORD in .env
+// then restart the dev server (Ctrl+C → npm run dev).
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
 const AdminContext = createContext(null);
 

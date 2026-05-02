@@ -632,7 +632,7 @@ export default function Projects() {
 
         {!isAdmin && (
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, padding: "9px 14px", borderRadius: 10, background: "rgba(168,85,247,0.07)", border: "1px solid rgba(168,85,247,0.18)" }}>
-            <Star size={13} style={{ color: "var(--vio)", flexShrink: 0 }} />
+            {/* <Star size={13} style={{ color: "var(--vio)", flexShrink: 0 }} /> */}
             <span style={{ fontSize: 12, color: "var(--vio)" }}>
               Click ⭐ on any card to set it as the featured project.
             </span>
