@@ -48,8 +48,8 @@ import {loadProjects} from "../utils/ProjectStore"
 /** Key metrics shown below the hero */
 const STATS_DATA = [
   { value: "30+",  label: "Projects",     Icon: LayoutGrid    },
-  { value: "100+", label: "Responses",    Icon: MessageSquare },
-  { value: "100+", label: "CodeChef Q's", Icon: Code2         },
+  { value: "50+", label: "Responses",    Icon: MessageSquare },
+  { value: "50+", label: "CodeChef Q's", Icon: Code2         },
   { value: "1.5+", label: "Years Exp.",   Icon: Briefcase     },
 ];
 
@@ -146,7 +146,7 @@ const SKILLS_DATA = [
   { n: "Tailwind CSS", p: 86, c: "#06B6D4" },
   { n: "Python",       p: 72, c: "#3776AB" },
   { n: "Node.js",      p: 68, c: "#339933" },
-  { n: "Git",          p: 80, c: "#F05032" },
+  { n: "Git & GitHub",          p: 80, c: "#F05032" },
 ];
 
 // Skills visible before "More" button

@@ -6,7 +6,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const Ctx = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [theme, set] = useState(() => localStorage.getItem("mkm-t") || "dark");
+  const [theme, set] = useState(() => localStorage.getItem("mkm-t") || "light");
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("mkm-t", theme);

@@ -198,7 +198,7 @@ export default function Contact() {
           {/* LEFT — info cards */}
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
             <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--pnk)", letterSpacing: "-0.02em" }} className="flex items-center gap-1 ">
-              Hello {greeting} <Hand />
+              {greeting} <Hand />
             </h2>
             <p style={{ fontSize: 14, color: "var(--ink2)", lineHeight: 1.75 }}>
               I'm currently open to new opportunities and collaborations.
