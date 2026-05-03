@@ -10,7 +10,7 @@
  */
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Send, Lock, ShieldCheck, Github, Linkedin, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Send, Lock, ShieldCheck, Github, Linkedin, Mail, MapPin, ArrowRight, Hand } from "lucide-react";
 
 // ── EmailJS credentials ──────────────────────────────────────
 // These values come from your .env file in the project root.
@@ -62,6 +62,22 @@ function Field({ label, error, children }) {
     </div>
   );
 }
+
+
+// greeting message
+
+  const currentHour = new Date().getHours();
+  let greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good Morning!";
+  } else if (currentHour < 17) {
+    greeting = "Good Afternoon!";
+  } else if (currentHour < 21) {
+    greeting = "Good Evening!";
+  } else {
+    greeting = "Good Night!";
+  }
 
 export default function Contact() {
   const [form, setForm] = useState(EMPTY);
@@ -181,8 +197,8 @@ export default function Contact() {
 
           {/* LEFT — info cards */}
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--ink)", letterSpacing: "-0.02em" }}>
-              Say hello 👋
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--pnk)", letterSpacing: "-0.02em" }} className="flex items-center gap-1 ">
+              Hello {greeting} <Hand />
             </h2>
             <p style={{ fontSize: 14, color: "var(--ink2)", lineHeight: 1.75 }}>
               I'm currently open to new opportunities and collaborations.
