@@ -300,7 +300,7 @@ function HeroSection() {
           View My Work <ArrowRight size={16} />
         </PrimaryButton>
         {/* Drop Mahavir_CV.pdf into /public/ to enable this download */}
-        <GhostButton href="https://rxresu.me/mahavir777kumar/mahavir-kumar-mahato" target="_blank">
+        <GhostButton href="https://drive.google.com/file/d/1RiJ033nXRuEZIeMJ_GvM5vlEZg0GqDO6/view?usp=sharing" target="_blank">
           <Download size={16} /> Download CV
         </GhostButton>
       </div>
