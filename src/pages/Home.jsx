@@ -69,18 +69,18 @@ const STATS_DATA = [
  *   initials  — 2-letter company badge
  */
 const EXPERIENCE_DATA = [
-  {
-    role:     "Software Developer",
-    company:  "Zolabs",
-    type:     "Full-time",
-    period:   "Feb 2026 — Present",
-    duration: "4 mos",
-    location: "Coimbatore, Tamil Nadu · On-site",
-    desc:     "Contributing to product development and engineering initiatives, building scalable web solutions and collaborating with cross-functional teams.",
-    current:  true,
-    color:    "#ec4899",
-    initials: "ZL",
-  },
+  // {
+  //   role:     "Software Developer",
+  //   company:  "Zolabs",
+  //   type:     "Full-time",
+  //   period:   "Feb 2026 — Present",
+  //   duration: "4 mos",
+  //   location: "Coimbatore, Tamil Nadu · On-site",
+  //   desc:     "Contributing to product development and engineering initiatives, building scalable web solutions and collaborating with cross-functional teams.",
+  //   current:  true,
+  //   color:    "#ec4899",
+  //   initials: "ZL",
+  // },
   {
     role:     "Software Engineer",
     company:  "EdZola Technologies",
