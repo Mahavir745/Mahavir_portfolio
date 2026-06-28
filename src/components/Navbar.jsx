@@ -587,7 +587,7 @@ export default function Navbar() {
       <div
         className="md:hidden"
         style={{
-          position: "fixed", inset: 0, zIndex: 99,
+          position: "fixed", inset: 0, zIndex: 101,
           background: "var(--bg)",
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 32,
           transform: open ? "translateX(0)" : "translateX(100%)",
@@ -597,7 +597,7 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(false)}
           aria-label="Close"
-          style={{ position: "absolute", top: 18, right: 18, background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 8, padding: "6px 8px", color: "var(--ink)", display: "flex" }}
+          style={{ position: "absolute", top: 24, right: 24, background: "var(--surface)", border: "1px solid var(--line)", borderRadius: 8, padding: "6px 8px", color: "var(--ink)", display: "flex" }}
         >
           <X size={20} />
         </button>
@@ -620,7 +620,7 @@ export default function Navbar() {
             display: "flex", alignItems: "center", gap: 8,
             padding: "12px 32px", borderRadius: 12,
             fontSize: 16, fontWeight: 700, color: "#fff", border: "none",
-            background: "linear-gradient(135deg,var(--pur),var(--ind))",
+            background: "linear-gradient(135deg,var(--pur),var(--blu))",
             marginTop: 8,
           }}
         >
