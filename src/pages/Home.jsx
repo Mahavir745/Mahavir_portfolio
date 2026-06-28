@@ -38,7 +38,7 @@ import {
   Atom,          // Projects: React
 } from "lucide-react";
 
-import {loadProjects} from "../utils/ProjectStore"
+import { loadProjects } from "../utils/ProjectStore"
 
 
 /* =============================================================
@@ -47,10 +47,10 @@ import {loadProjects} from "../utils/ProjectStore"
 
 /** Key metrics shown below the hero */
 const STATS_DATA = [
-  { value: "30+",  label: "Projects",     Icon: LayoutGrid    },
-  { value: "50+", label: "Responses",    Icon: MessageSquare },
-  { value: "50+", label: "CodeChef Q's", Icon: Code2         },
-  { value: "1.5+", label: "Years Exp.",   Icon: Briefcase     },
+  { value: "30+", label: "Projects", Icon: LayoutGrid },
+  { value: "50+", label: "Responses", Icon: MessageSquare },
+  { value: "50+", label: "CodeChef Q's", Icon: Code2 },
+  { value: "1.5+", label: "Years Exp.", Icon: Briefcase },
 ];
 
 /**
@@ -82,39 +82,39 @@ const EXPERIENCE_DATA = [
   //   initials: "ZL",
   // },
   {
-    role:     "Software Engineer",
-    company:  "EdZola Technologies",
-    type:     "Full-time",
-    period:   "Nov 2025 — Present",
+    role: "Software Engineer",
+    company: "EdZola Technologies",
+    type: "Full-time",
+    period: "Nov 2025 — Present",
     duration: "7 mos",
     location: "Coimbatore, Tamil Nadu · Hybrid",
-    desc:     "Building full-stack web apps for non-profit organisations using React, Node.js and Zoho Creator — enabling digital transformation for 50+ NGO clients across India.",
-    current:  true,
-    color:    "#a855f7",
+    desc: "Building full-stack web apps for non-profit organisations using React, Node.js and Zoho Creator — enabling digital transformation for 50+ NGO clients across India.",
+    current: true,
+    color: "#a855f7",
     initials: "EZ",
   },
   {
-    role:     "Software Engineer Intern",
-    company:  "EdZola Technologies",
-    type:     "Internship",
-    period:   "May 2025 — Oct 2025",
+    role: "Software Engineer Intern",
+    company: "EdZola Technologies",
+    type: "Internship",
+    period: "May 2025 — Oct 2025",
     duration: "6 mos",
     location: "Coimbatore, Tamil Nadu · Hybrid",
-    desc:     "Worked on Zoho Creator app development, React frontends and process automation for NGO clients. Shipped multiple production features across the full delivery lifecycle.",
-    current:  false,
-    color:    "#6366f1",
+    desc: "Worked on Zoho Creator app development, React frontends and process automation for NGO clients. Shipped multiple production features across the full delivery lifecycle.",
+    current: false,
+    color: "#6366f1",
     initials: "EZ",
   },
   {
-    role:     "Software Developer",
-    company:  "HyperVerge Academy",
-    type:     "Internship",
-    period:   "Jul 2024 — May 2025",
+    role: "Software Developer",
+    company: "HyperVerge Academy",
+    type: "Internship",
+    period: "Jul 2024 — May 2025",
     duration: "11 mos",
     location: "Bengaluru, Karnataka · Remote",
-    desc:     "Developed web projects during the HyperVerge Academy program, focusing on React, JavaScript, and full-stack application development.",
-    current:  false,
-    color:    "#3b82f6",
+    desc: "Developed web projects during the HyperVerge Academy program, focusing on React, JavaScript, and full-stack application development.",
+    current: false,
+    color: "#3b82f6",
     initials: "HV",
   },
 ];
@@ -125,13 +125,13 @@ const EXPERIENCE_DATA = [
    PROJECTS count 
 ============================================================= */
 
-const allProjects = loadProjects(); 
+const allProjects = loadProjects();
 const jsCount = allProjects.filter(p => p.tech === "JS").length;
 const reactCount = allProjects.filter(p => p.tech === "React").length;
 
 const PROJECT_CATS = [
-  { label: "JS Projects",    count: jsCount, color: "#F7DF1E", Icon: Layers },
-  { label: "React Projects", count: reactCount, color: "#61DAFB", Icon: Atom   },
+  { label: "JS Projects", count: jsCount, color: "#F7DF1E", Icon: Layers },
+  { label: "React Projects", count: reactCount, color: "#61DAFB", Icon: Atom },
 ];
 
 
@@ -140,13 +140,13 @@ const PROJECT_CATS = [
  *   n = name  |  p = percent (0–100)  |  c = brand colour
  */
 const SKILLS_DATA = [
-  { n: "HTML5 & CSS",        p: 92, c: "#E44D26" },
-  { n: "JavaScript",   p: 85, c: "#F7DF1E" },
-  { n: "React",        p: 82, c: "#61DAFB" },
+  { n: "HTML5 & CSS", p: 92, c: "#E44D26" },
+  { n: "JavaScript", p: 85, c: "#F7DF1E" },
+  { n: "React", p: 82, c: "#61DAFB" },
   { n: "Tailwind CSS", p: 86, c: "#06B6D4" },
-  { n: "Python",       p: 72, c: "#3776AB" },
-  { n: "Node.js",      p: 68, c: "#339933" },
-  { n: "Git & GitHub",          p: 80, c: "#F05032" },
+  { n: "Python", p: 72, c: "#3776AB" },
+  { n: "Node.js", p: 68, c: "#339933" },
+  { n: "Git & GitHub", p: 80, c: "#F05032" },
 ];
 
 // Skills visible before "More" button
@@ -205,7 +205,7 @@ function PrimaryButton({ children, onClick }) {
         whiteSpace: "nowrap", cursor: "pointer",
       }}
       onMouseEnter={e => { e.currentTarget.style.boxShadow = "var(--glowH)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-      onMouseLeave={e => { e.currentTarget.style.boxShadow = "var(--glow)";  e.currentTarget.style.transform = "translateY(0)"; }}
+      onMouseLeave={e => { e.currentTarget.style.boxShadow = "var(--glow)"; e.currentTarget.style.transform = "translateY(0)"; }}
     >
       {children}
     </button>
@@ -216,7 +216,7 @@ function PrimaryButton({ children, onClick }) {
  * Ghost (outline) button.
  * Pass href + download to render as a file download link.
  */
-function GhostButton({ children, href, onClick, style ,target}) {
+function GhostButton({ children, href, onClick, style, target }) {
   const baseStyle = {
     display: "inline-flex", alignItems: "center", gap: 10,
     padding: "13px 26px", borderRadius: 12,
@@ -229,10 +229,10 @@ function GhostButton({ children, href, onClick, style ,target}) {
     ...style,
   };
   const onEnter = e => { e.currentTarget.style.borderColor = "var(--lineH)"; e.currentTarget.style.transform = "translateY(-2px)"; };
-  const onLeave = e => { e.currentTarget.style.borderColor = "var(--line)";  e.currentTarget.style.transform = "translateY(0)"; };
+  const onLeave = e => { e.currentTarget.style.borderColor = "var(--line)"; e.currentTarget.style.transform = "translateY(0)"; };
 
   if (href) {
-    return <a href={href} target={target}download style={baseStyle} onMouseEnter={onEnter} onMouseLeave={onLeave}>{children}</a>;
+    return <a href={href} target={target} download style={baseStyle} onMouseEnter={onEnter} onMouseLeave={onLeave}>{children}</a>;
   }
   return (
     <button style={baseStyle} onClick={onClick} onMouseEnter={onEnter} onMouseLeave={onLeave}>
@@ -388,7 +388,7 @@ function StatsSection() {
  * Measures the real content height via a ref so it never clips.
  */
 function AnimatedDesc({ isOpen, text }) {
-  const innerRef     = useRef(null);
+  const innerRef = useRef(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -399,7 +399,7 @@ function AnimatedDesc({ isOpen, text }) {
     <div style={{
       overflow: "hidden",
       maxHeight: isOpen ? height + 32 : 0, // +32 accounts for top padding
-      opacity:   isOpen ? 1 : 0,
+      opacity: isOpen ? 1 : 0,
       transition: "max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s ease",
     }}>
       <div ref={innerRef} style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--line)" }}>
@@ -420,9 +420,9 @@ function AnimatedDesc({ isOpen, text }) {
  *  • Smooth expand — description slides down with CSS animation
  */
 function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
-  const cardRef              = useRef(null);
-  const [visible,  setVisible]  = useState(false);
-  const [hovered,  setHovered]  = useState(false);
+  const cardRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const isOpen = expandedIndex === index;
 
   // ── Scroll-triggered reveal ──────────────────────────────
@@ -442,12 +442,12 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
     const card = cardRef.current;
     if (!card) return;
     const { top, left, width, height } = card.getBoundingClientRect();
-    const size   = Math.max(width, height) * 2;
+    const size = Math.max(width, height) * 2;
     const ripple = document.createElement("span");
     ripple.style.cssText = `
       position:absolute; border-radius:50%; pointer-events:none;
       width:${size}px; height:${size}px;
-      top:${e.clientY - top   - size / 2}px;
+      top:${e.clientY - top - size / 2}px;
       left:${e.clientX - left - size / 2}px;
       background:${exp.color}18;
       transform:scale(0);
@@ -464,7 +464,7 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
         paddingLeft: 56,
         paddingBottom: index < EXPERIENCE_DATA.length - 1 ? 28 : 0,
         // Each card fades in 120ms after the previous one
-        opacity:   visible ? 1 : 0,
+        opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
         transition: `opacity 0.5s ease ${index * 0.12}s, transform 0.5s ease ${index * 0.12}s`,
       }}
@@ -478,8 +478,8 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
         display: "flex", alignItems: "center", justifyContent: "center",
         zIndex: 1,
         transition: "transform .22s, box-shadow .22s",
-        transform:  hovered ? "scale(1.25)" : "scale(1)",
-        boxShadow:  hovered ? `0 0 12px ${exp.color}88` : "none",
+        transform: hovered ? "scale(1.25)" : "scale(1)",
+        boxShadow: hovered ? `0 0 12px ${exp.color}88` : "none",
       }}>
         {/* Inner dot — pulses continuously for current roles */}
         <div style={{
@@ -494,12 +494,12 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
         onClick={spawnRipple}
         style={{
           borderRadius: 18, overflow: "hidden", position: "relative",
-          background:    hovered ? "var(--surfaceH)" : "var(--surface)",
-          border:        `1px solid ${hovered ? exp.color + "66" : "var(--line)"}`,
+          background: hovered ? "var(--surfaceH)" : "var(--surface)",
+          border: `1px solid ${hovered ? exp.color + "66" : "var(--line)"}`,
           backdropFilter: "blur(14px)",
           transition: "background .22s, border-color .22s, transform .22s, box-shadow .22s",
-          transform:  hovered ? "translateY(-4px) translateX(3px)" : "translateY(0)",
-          boxShadow:  hovered ? `0 16px 48px rgba(0,0,0,0.28), 0 0 0 1px ${exp.color}22` : "none",
+          transform: hovered ? "translateY(-4px) translateX(3px)" : "translateY(0)",
+          boxShadow: hovered ? `0 16px 48px rgba(0,0,0,0.28), 0 0 0 1px ${exp.color}22` : "none",
           cursor: "default",
         }}
         onMouseEnter={() => setHovered(true)}
@@ -510,9 +510,9 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
         <div style={{
           height: 3,
           background: `linear-gradient(90deg, ${exp.color}, ${exp.color}44, transparent)`,
-          transform:       `scaleX(${hovered ? 1 : 0.35})`,
+          transform: `scaleX(${hovered ? 1 : 0.35})`,
           transformOrigin: "left",
-          transition:      "transform .35s ease",
+          transition: "transform .35s ease",
         }} />
 
         <div style={{ padding: "20px 22px" }}>
@@ -525,8 +525,8 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
               fontSize: 12, fontWeight: 900, letterSpacing: "0.05em",
               background: `${exp.color}18`, border: `1px solid ${exp.color}40`, color: exp.color,
               transition: "transform .22s, box-shadow .22s",
-              transform:  hovered ? "rotate(-4deg) scale(1.08)" : "rotate(0) scale(1)",
-              boxShadow:  hovered ? `0 4px 14px ${exp.color}44` : "none",
+              transform: hovered ? "rotate(-4deg) scale(1.08)" : "rotate(0) scale(1)",
+              boxShadow: hovered ? `0 4px 14px ${exp.color}44` : "none",
             }}>
               {exp.initials}
             </div>
@@ -585,10 +585,10 @@ function ExperienceCard({ exp, index, expandedIndex, onToggle }) {
               onClick={e => { e.stopPropagation(); onToggle(index); }}
               aria-label={isOpen ? "Collapse details" : "Expand details"}
               style={{
-                background:   isOpen ? `${exp.color}18` : "none",
-                border:       isOpen ? `1px solid ${exp.color}35` : "1px solid transparent",
+                background: isOpen ? `${exp.color}18` : "none",
+                border: isOpen ? `1px solid ${exp.color}35` : "1px solid transparent",
                 borderRadius: 8, cursor: "pointer", padding: "5px 7px",
-                color:        isOpen ? exp.color : "var(--vio)",
+                color: isOpen ? exp.color : "var(--vio)",
                 flexShrink: 0, marginTop: 2, transition: "all .22s",
               }}
               onMouseEnter={e => { e.currentTarget.style.background = `${exp.color}22`; e.currentTarget.style.borderColor = `${exp.color}55`; e.currentTarget.style.color = exp.color; }}
@@ -662,56 +662,66 @@ function ProjectsSection() {
   const navigate = useNavigate();
 
   return (
-    <section style={{ padding: "80px 0" }}>
+    <section style={{ padding: "100px 0" }}>
       <Container>
 
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ textAlign: "center", marginBottom: 64 }}>
           <Eyebrow text="Portfolio" />
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 14 }}>
-            My <span className="gt">Projects</span>
+          <h2 style={{ fontSize: "clamp(32px, 5vw, 54px)", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 16 }}>
+            My <span style={{ color: "var(--vio)" }}>Projects</span>
           </h2>
-          <p style={{ fontSize: 15, color: "var(--ink2)", maxWidth: 500, margin: "0 auto", lineHeight: 1.7 }}>
-            Passionate about transforming innovative ideas into successful, impactful solutions.
+          <p style={{ fontSize: 16, color: "var(--ink2)", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
+            A collection of robust, scalable solutions I've built using modern web technologies.
           </p>
         </div>
 
-        {/* Category cards */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center", marginBottom: 40 }}>
+        {/* Minimal Bento Category cards */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", marginBottom: 48 }}>
           {PROJECT_CATS.map(({ label, count, color, Icon }) => (
             <button
               key={label}
               onClick={() => navigate("/project")}
               style={{
-                display: "flex", flexDirection: "column", alignItems: "center", gap: 14,
-                padding: "28px 24px", width: 180, borderRadius: 20,
+                display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 20,
+                padding: "32px", width: 260, borderRadius: 24,
                 background: "var(--surface)", border: "1px solid var(--line)",
-                backdropFilter: "blur(12px)", transition: "all .22s",
+                boxShadow: "0 4px 24px rgba(0, 0, 0, 0.03)",
+                transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                 cursor: "pointer", fontFamily: "inherit",
+                textAlign: "left",
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = "var(--surfaceH)"; e.currentTarget.style.borderColor = `${color}88`; e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 48px rgba(0,0,0,.22)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "var(--surface)"; e.currentTarget.style.borderColor = "var(--line)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-6px)";
+                e.currentTarget.style.boxShadow = "0 16px 32px rgba(0,0,0,0.06)";
+                e.currentTarget.style.borderColor = `${color}40`;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 24px rgba(0, 0, 0, 0.03)";
+                e.currentTarget.style.borderColor = "var(--line)";
+              }}
             >
-              {/* Icon in a coloured circle */}
               <div style={{
-                width: 52, height: 52, borderRadius: "50%",
-                background: `${color}18`, border: `2px solid ${color}44`,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                width: 56, height: 56, borderRadius: 16,
+                background: `${color}15`, display: "flex", alignItems: "center", justifyContent: "center",
+                color: color,
               }}>
-                <Icon size={24} style={{ color }} />
+                <Icon size={28} />
               </div>
 
-              <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)", textAlign: "center" }}>{label}</span>
-
-              <span style={{ fontSize: 11, padding: "3px 12px", borderRadius: 100, background: "rgba(168,85,247,.1)", border: "1px solid rgba(168,85,247,.22)", color: "var(--vio)", fontWeight: 600 }}>
-                {count} projects
-              </span>
+              <div>
+                <span style={{ display: "block", fontSize: 18, fontWeight: 700, color: "var(--ink)", marginBottom: 6 }}>{label}</span>
+                <span style={{ fontSize: 14, color: "var(--ink2)", fontWeight: 500 }}>
+                  {count} completed
+                </span>
+              </div>
             </button>
           ))}
         </div>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <PrimaryButton onClick={() => navigate("/project")}>
-            View All Projects <ArrowRight size={15} />
+            Browse Full Portfolio <ArrowRight size={16} />
           </PrimaryButton>
         </div>
 
@@ -729,66 +739,78 @@ function SkillsSection() {
   const visibleSkills = showAll ? SKILLS_DATA : SKILLS_DATA.slice(0, SKILLS_VISIBLE);
 
   return (
-    <section style={{ padding: "80px 0" }}>
+    <section style={{ padding: "100px 0", background: "var(--bg2)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
       <Container>
 
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ textAlign: "center", marginBottom: 64 }}>
           <Eyebrow text="Proficiencies" />
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: 12 }}>
-            Tech <span className="gt">Stack</span>
+          <h2 style={{ fontSize: "clamp(32px, 5vw, 54px)", fontWeight: 800, letterSpacing: "-0.04em", marginBottom: 16 }}>
+            Tech <span style={{ color: "var(--vio)" }}>Stack</span>
           </h2>
-          <p style={{ fontSize: 14, color: "var(--ink2)", maxWidth: 520, margin: "0 auto", fontStyle: "italic" }}>
-            "Proficient in React, Tailwind CSS, Python, and MongoDB for building dynamic, scalable web applications."
+          <p style={{ fontSize: 16, color: "var(--ink2)", maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
+            Core technologies and tools I use to build dynamic, scalable, and high-performance web applications.
           </p>
         </div>
 
-        {/* Skills grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-          {visibleSkills.map(({ n, p, c }) => (
+        {/* Minimal Bento Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+          {visibleSkills.map(({ n, p, c }, idx) => (
             <div
               key={n}
-              style={{ padding: "20px 22px", borderRadius: 16, background: "var(--surface)", border: "1px solid var(--line)", backdropFilter: "blur(12px)", transition: "all .22s" }}
-              onMouseEnter={e => { e.currentTarget.style.background = "var(--surfaceH)"; e.currentTarget.style.borderColor = `${c}55`; e.currentTarget.style.transform = "translateY(-3px)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "var(--surface)"; e.currentTarget.style.borderColor = "var(--line)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              style={{
+                padding: "28px",
+                borderRadius: 24,
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                boxShadow: "0 4px 24px rgba(0, 0, 0, 0.03)",
+                transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+                display: "flex", flexDirection: "column", gap: 16,
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.08)";
+                e.currentTarget.style.borderColor = `${c}40`;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 24px rgba(0, 0, 0, 0.03)";
+                e.currentTarget.style.borderColor = "var(--line)";
+              }}
             >
-              {/* Name row */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  {/* Brand colour dot */}
-                  <span style={{ width: 10, height: 10, borderRadius: "50%", background: c, boxShadow: `0 0 8px ${c}80`, flexShrink: 0, display: "inline-block" }} />
-                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>{n}</span>
+              {/* Top row: Icon + Name */}
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                <div style={{ width: 48, height: 48, borderRadius: 14, background: `${c}15`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ width: 16, height: 16, borderRadius: "50%", background: c, boxShadow: `0 2px 8px ${c}80` }} />
                 </div>
-                <span style={{ fontSize: 12, fontWeight: 600, color: "var(--ink2)" }}>{p}%</span>
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: "var(--ink)", letterSpacing: "-0.02em", marginBottom: 2 }}>{n}</h3>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "var(--ink2)" }}>Proficiency: {p}%</span>
+                </div>
               </div>
 
-              {/* Animated progress bar */}
-              <div style={{ height: 6, borderRadius: 6, background: "rgba(255,255,255,.08)", overflow: "hidden" }}>
+              {/* Minimal Progress Bar */}
+              <div style={{ height: 6, borderRadius: 100, background: "var(--surfaceH)", overflow: "hidden", marginTop: "auto", border: "1px solid rgba(255,255,255,0.02)" }}>
                 <div
-                  className="a-bar"
-                  style={{ height: "100%", width: `${p}%`, borderRadius: 6, background: `linear-gradient(90deg, ${c}, var(--vio))` }}
+                  style={{
+                    height: "100%",
+                    width: `${p}%`,
+                    borderRadius: 100,
+                    background: c,
+                    animation: `bar 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.05}s both`
+                  }}
                 />
               </div>
-
-              {/* Docs link */}
-              <a
-                href="#"
-                style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 11, fontWeight: 600, color: "var(--vio)", marginTop: 10, transition: "color .15s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--blu)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--vio)")}
-              >
-                More Details <ExternalLink size={10} />
-              </a>
             </div>
           ))}
         </div>
 
         {/* Show more / less */}
         {SKILLS_DATA.length > SKILLS_VISIBLE && (
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 28 }}>
-            <GhostButton onClick={() => setShowAll(v => !v)} style={{ fontSize: 13, padding: "10px 22px" }}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <GhostButton onClick={() => setShowAll(v => !v)} style={{ fontSize: 14, padding: "12px 28px", borderRadius: 100 }}>
               {showAll
-                ? <><ChevronUp   size={14} /> Show Less</>
-                : <><ChevronDown size={14} /> More</>
+                ? <><ChevronUp size={16} /> Collapse</>
+                : <><ChevronDown size={16} /> View All Skills</>
               }
             </GhostButton>
           </div>
@@ -799,15 +821,9 @@ function SkillsSection() {
   );
 }
 
-
-/* =============================================================
-   PAGE EXPORT
-   ── Remove a section: delete its JSX line + the <Divider /> above
-   ── Reorder sections: move the JSX blocks
-============================================================= */
 export default function Home() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <HeroSection />
       <Divider />
       <StatsSection />
@@ -817,6 +833,6 @@ export default function Home() {
       <ProjectsSection />
       <Divider />
       <SkillsSection />
-    </>
+    </div>
   );
 }

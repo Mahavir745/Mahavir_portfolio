@@ -47,26 +47,18 @@ const DEFAULT_BLOGS = [
     source: "manual",
     linkedinUrl: null,
   },
+  
 ];
 
-/** Load all blog posts from localStorage */
-export function loadBlogs() {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored);
-  } catch {
-    // corrupted — start fresh
-  }
-  return DEFAULT_BLOGS;
-}
+let currentBlogs = [...DEFAULT_BLOGS];
 
-function saveBlogs(blogs) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(blogs));
+/** Load all blog posts from memory */
+export function loadBlogs() {
+  return currentBlogs;
 }
 
 /** Add a new blog post. Returns updated array. */
 export function addBlog(data) {
-  const blogs = loadBlogs();
   const post = {
     ...data,
     id: Date.now(),
@@ -74,23 +66,18 @@ export function addBlog(data) {
     linkedinUrl: null,
     date: data.date || new Date().toISOString().slice(0, 10),
   };
-  const updated = [post, ...blogs]; // newest first
-  saveBlogs(updated);
-  return updated;
+  currentBlogs = [post, ...currentBlogs]; // newest first
+  return currentBlogs;
 }
 
 /** Edit an existing post. Returns updated array. */
 export function editBlog(id, fields) {
-  const blogs = loadBlogs();
-  const updated = blogs.map(b => b.id === id ? { ...b, ...fields } : b);
-  saveBlogs(updated);
-  return updated;
+  currentBlogs = currentBlogs.map(b => b.id === id ? { ...b, ...fields } : b);
+  return currentBlogs;
 }
 
 /** Delete a post. Returns updated array. */
 export function deleteBlog(id) {
-  const blogs = loadBlogs();
-  const updated = blogs.filter(b => b.id !== id);
-  saveBlogs(updated);
-  return updated;
+  currentBlogs = currentBlogs.filter(b => b.id !== id);
+  return currentBlogs;
 }

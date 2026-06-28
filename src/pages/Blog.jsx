@@ -32,7 +32,7 @@ import {
   Linkedin, FileText,
 } from "lucide-react";
 
-import { useAdmin }from "../context/AdminContext";
+import { useAdmin } from "../context/AdminContext";
 import { loadBlogs, addBlog, editBlog, deleteBlog } from "../utils/BlogStore";
 
 
@@ -42,7 +42,7 @@ import { loadBlogs, addBlog, editBlog, deleteBlog } from "../utils/BlogStore";
    Used to stagger card fade-in animations.
 ============================================================= */
 function useScrollReveal(delay = 0) {
-  const ref              = useRef(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ function formatDate(dateStr) {
    Smooth max-height transition — same approach as Experience cards.
 ============================================================= */
 function AnimatedContent({ isOpen, text }) {
-  const innerRef          = useRef(null);
+  const innerRef = useRef(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function AnimatedContent({ isOpen, text }) {
     <div style={{
       overflow: "hidden",
       maxHeight: isOpen ? height + 24 : 0,
-      opacity:   isOpen ? 1 : 0,
+      opacity: isOpen ? 1 : 0,
       transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease",
     }}>
       <div
@@ -117,14 +117,14 @@ function AnimatedContent({ isOpen, text }) {
    LinkedIn-sourced posts show a LinkedIn badge.
 ============================================================= */
 function BlogCard({ post, index, expandedId, onExpand, onEdit, onDelete }) {
-  const { isAdmin }              = useAdmin();
-  const { ref, visible, delay }  = useScrollReveal(index * 0.08);
-  const isExpanded               = expandedId === post.id;
-  const isLinkedIn               = post.source === "linkedin";
+  const { isAdmin } = useAdmin();
+  const { ref, visible, delay } = useScrollReveal(index * 0.08);
+  const isExpanded = expandedId === post.id;
+  const isLinkedIn = post.source === "linkedin";
 
   // Gradient accent colour per post (cycles through brand palette)
   const ACCENTS = ["var(--vio)", "var(--blu)", "var(--pnk)", "var(--ind)"];
-  const accent  = ACCENTS[index % ACCENTS.length];
+  const accent = ACCENTS[index % ACCENTS.length];
 
   return (
     <div
@@ -135,8 +135,8 @@ function BlogCard({ post, index, expandedId, onExpand, onEdit, onDelete }) {
         backdropFilter: "blur(14px)",
         display: "flex", flexDirection: "column",
         // Scroll-reveal stagger
-        opacity:    visible ? 1 : 0,
-        transform:  visible ? "translateY(0)" : "translateY(24px)",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(24px)",
         transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s, border-color .22s, box-shadow .22s`,
       }}
       onMouseEnter={e => { e.currentTarget.style.borderColor = `${accent}`; e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.22)"; }}
@@ -215,8 +215,8 @@ function BlogCard({ post, index, expandedId, onExpand, onEdit, onDelete }) {
           {/* Admin controls */}
           {isAdmin && (
             <div style={{ display: "flex", gap: 6 }}>
-              <BlogIconBtn icon={<Pencil size={12} />} title="Edit post"   onClick={() => onEdit(post)} />
-              <BlogIconBtn icon={<Trash2  size={12} />} title="Delete post" danger
+              <BlogIconBtn icon={<Pencil size={12} />} title="Edit post" onClick={() => onEdit(post)} />
+              <BlogIconBtn icon={<Trash2 size={12} />} title="Delete post" danger
                 onClick={() => { if (window.confirm(`Delete "${post.title}"?`)) onDelete(post.id); }}
               />
             </div>
@@ -237,9 +237,9 @@ function BlogIconBtn({ icon, title, onClick, danger = false }) {
       onClick={onClick} title={title} aria-label={title}
       style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 30, height: 30, borderRadius: 8, background: "var(--surface)", border: "1px solid var(--line)", color: "var(--ink3)", cursor: "pointer", transition: "all .18s" }}
       onMouseEnter={e => {
-        e.currentTarget.style.background  = danger ? "rgba(239,68,68,0.10)" : "rgba(168,85,247,0.10)";
+        e.currentTarget.style.background = danger ? "rgba(239,68,68,0.10)" : "rgba(168,85,247,0.10)";
         e.currentTarget.style.borderColor = danger ? "rgba(239,68,68,0.35)" : "var(--lineH)";
-        e.currentTarget.style.color       = danger ? "#ef4444" : "var(--vio)";
+        e.currentTarget.style.color = danger ? "#ef4444" : "var(--vio)";
       }}
       onMouseLeave={e => { e.currentTarget.style.background = "var(--surface)"; e.currentTarget.style.borderColor = "var(--line)"; e.currentTarget.style.color = "var(--ink3)"; }}
     >
@@ -258,7 +258,7 @@ function BlogFormPanel({ isOpen, onClose, onSave, initialData }) {
   // Shared input style
   const inp = { width: "100%", padding: "10px 14px", borderRadius: 10, fontSize: 14, fontFamily: "inherit", background: "var(--surface)", color: "var(--ink)", border: "1px solid var(--line)", outline: "none", transition: "border-color .2s" };
   const focus = e => (e.target.style.borderColor = "var(--vio)");
-  const blur  = e => (e.target.style.borderColor = "var(--line)");
+  const blur = e => (e.target.style.borderColor = "var(--line)");
 
   function emptyForm() {
     return { title: "", excerpt: "", content: "", tags: "", date: new Date().toISOString().slice(0, 10) };
@@ -344,7 +344,7 @@ function BlogFormPanel({ isOpen, onClose, onSave, initialData }) {
 
           <button
             type="submit"
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, borderRadius: 10, marginTop: "auto", fontSize: 14, fontWeight: 700, color: "#fff", border: "none", background: "linear-gradient(135deg,var(--pur),var(--ind))", boxShadow: "var(--glow)", cursor: "pointer", fontFamily: "inherit", transition: "box-shadow .2s" }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, borderRadius: 10, marginTop: "auto", fontSize: 14, fontWeight: 700, color: "#fff", border: "none", background: "linear-gradient(135deg,var(--pur),var(--blu))", boxShadow: "var(--glow)", cursor: "pointer", fontFamily: "inherit", transition: "box-shadow .2s" }}
             onMouseEnter={e => (e.currentTarget.style.boxShadow = "var(--glowH)")}
             onMouseLeave={e => (e.currentTarget.style.boxShadow = "var(--glow)")}
           >
@@ -365,14 +365,14 @@ export default function Blog() {
   const { isAdmin } = useAdmin();
 
   // All blog posts (from localStorage)
-  const [posts,          setPosts]         = useState(() => loadBlogs());
+  const [posts, setPosts] = useState(() => loadBlogs());
   // Which tag filter is active
-  const [activeTag,      setActiveTag]     = useState("All");
+  const [activeTag, setActiveTag] = useState("All");
   // Which post is expanded (only one at a time)
-  const [expandedId,     setExpandedId]    = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
   // Add/Edit panel state
-  const [panelOpen,      setPanelOpen]     = useState(false);
-  const [editingPost,    setEditingPost]   = useState(null); // null = adding new
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [editingPost, setEditingPost] = useState(null); // null = adding new
 
   // Auto-generate tag tabs from post data (unique tags)
   const allTags = ["All", ...new Set(posts.flatMap(p => p.tags || []))];
@@ -381,6 +381,19 @@ export default function Blog() {
   const filteredPosts = activeTag === "All"
     ? posts
     : posts.filter(p => (p.tags || []).includes(activeTag));
+
+  // Pagination State
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; // 6 cards per page
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset to page 1 when filter changes
+  }, [activeTag]);
+
+  // Pagination Logic
+  const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentPosts = filteredPosts.slice(startIndex, startIndex + itemsPerPage);
 
   // ── Handlers ─────────────────────────────────────────────
 
@@ -440,13 +453,13 @@ export default function Blog() {
                   style={{
                     padding: "8px 18px", borderRadius: 10, fontSize: 12, fontWeight: 600,
                     cursor: "pointer", fontFamily: "inherit", transition: "all .18s",
-                    background: isActive ? "linear-gradient(135deg,var(--pur),var(--ind))" : "var(--surface)",
-                    border:     isActive ? "1px solid transparent" : "1px solid var(--line)",
-                    color:      isActive ? "#fff" : "var(--ink2)",
-                    boxShadow:  isActive ? "var(--glow)" : "none",
+                    background: isActive ? "linear-gradient(135deg,var(--pur),var(--blu))" : "var(--surface)",
+                    border: isActive ? "1px solid transparent" : "1px solid var(--line)",
+                    color: isActive ? "#fff" : "var(--ink2)",
+                    boxShadow: isActive ? "var(--glow)" : "none",
                   }}
                   onMouseEnter={e => { if (!isActive) { e.currentTarget.style.borderColor = "var(--lineH)"; e.currentTarget.style.color = "var(--ink)"; } }}
-                  onMouseLeave={e => { if (!isActive) { e.currentTarget.style.borderColor = "var(--line)";  e.currentTarget.style.color = "var(--ink2)"; } }}
+                  onMouseLeave={e => { if (!isActive) { e.currentTarget.style.borderColor = "var(--line)"; e.currentTarget.style.color = "var(--ink2)"; } }}
                 >
                   {tag}
                 </button>
@@ -458,7 +471,7 @@ export default function Blog() {
           {isAdmin && (
             <button
               onClick={() => { setEditingPost(null); setPanelOpen(true); }}
-              style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 20px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", color: "#fff", border: "none", background: "linear-gradient(135deg,var(--pur),var(--ind))", boxShadow: "var(--glow)", transition: "box-shadow .18s" }}
+              style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 20px", borderRadius: 10, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", color: "#fff", border: "none", background: "linear-gradient(135deg,var(--pur),var(--blu))", boxShadow: "var(--glow)", transition: "box-shadow .18s" }}
               onMouseEnter={e => (e.currentTarget.style.boxShadow = "var(--glowH)")}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = "var(--glow)")}
             >
@@ -488,7 +501,7 @@ export default function Blog() {
           </div>
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: 16 }}>
-            {filteredPosts.map((post, i) => (
+            {currentPosts.map((post, i) => (
               <BlogCard
                 key={post.id}
                 post={post}
@@ -499,6 +512,35 @@ export default function Blog() {
                 onDelete={handleDelete}
               />
             ))}
+          </div>
+        )}
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 24, marginTop: 40 }}>
+            <button 
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(p => p - 1)}
+              style={{ padding: "10px 24px", borderRadius: 100, border: "1px solid var(--line)", background: "var(--surface)", color: currentPage === 1 ? "var(--ink3)" : "var(--ink)", cursor: currentPage === 1 ? "not-allowed" : "pointer", fontWeight: 700, fontSize: 14, transition: "all 0.2s", opacity: currentPage === 1 ? 0.5 : 1 }}
+              onMouseEnter={e => { if(currentPage !== 1) e.currentTarget.style.background = "var(--surfaceH)" }}
+              onMouseLeave={e => { if(currentPage !== 1) e.currentTarget.style.background = "var(--surface)" }}
+            >
+              Previous
+            </button>
+            
+            <span style={{ fontSize: 14, fontWeight: 700, color: "var(--ink2)" }}>
+              Page {currentPage} of {totalPages}
+            </span>
+
+            <button 
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(p => p + 1)}
+              style={{ padding: "10px 24px", borderRadius: 100, border: "1px solid var(--line)", background: "var(--surface)", color: currentPage === totalPages ? "var(--ink3)" : "var(--ink)", cursor: currentPage === totalPages ? "not-allowed" : "pointer", fontWeight: 700, fontSize: 14, transition: "all 0.2s", opacity: currentPage === totalPages ? 0.5 : 1 }}
+              onMouseEnter={e => { if(currentPage !== totalPages) e.currentTarget.style.background = "var(--surfaceH)" }}
+              onMouseLeave={e => { if(currentPage !== totalPages) e.currentTarget.style.background = "var(--surface)" }}
+            >
+              Next
+            </button>
           </div>
         )}
 

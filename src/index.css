@@ -3,70 +3,131 @@
 /* ─── Theme tokens on <html data-theme="..."> ─────────── */
 :root,
 [data-theme="dark"] {
-  --bg:       #06050e;
-  --bg2:      #0c0a1a;
-  --surface:  rgba(255 255 255 / 0.045);
-  --surfaceH: rgba(255 255 255 / 0.085);
-  --line:     rgba(139 138 176 / 0.14);
-  --lineH:    rgba(168 85 247 / 0.55);
-  --ink:      #f0efff;
-  --ink2:     #8b8ab0;
-  --ink3:     #48476a;
-  --vio:      #a855f7;
-  --pur:      #7c3aed;
-  --blu:      #3b82f6;
-  --ind:      #6366f1;
-  --pnk:      #ec4899;
-  --nav-bg:   rgba(6 5 14 / 0.82);
-  --glow:     0 0 28px rgba(124 58 237 / 0.42);
-  --glowH:    0 0 48px rgba(124 58 237 / 0.68);
-  --orb:      0.40;
-  --orb2:     0.18;
+  --bg: #0f172a; /* Slate 900 */
+  --bg2: #1e293b; /* Slate 800 */
+  --surface: rgba(255, 255, 255, 0.04);
+  --surfaceH: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.1);
+  --lineH: rgba(16, 185, 129, 0.7);
+  --ink: #f8fafc;
+  --ink2: #cbd5e1;
+  --ink3: #64748b;
+  --vio: #10b981; /* Emerald */
+  --pur: #059669; /* Deep Emerald */
+  --blu: #06b6d4; /* Cyan */
+  --ind: #3b82f6; /* Blue */
+  --pnk: #8b5cf6; /* Violet */
+  --nav-bg: rgba(15, 23, 42, 0.7);
+  --glow: 0 0 32px rgba(16, 185, 129, 0.5);
+  --glowH: 0 0 56px rgba(16, 185, 129, 0.8);
+  --orb: 0.50;
+  --orb2: 0.30;
 }
+
 [data-theme="light"] {
-  --bg:       #f2f1ff;
-  --bg2:      #e9e7ff;
-  --surface:  rgba(255 255 255 / 0.72);
-  --surfaceH: rgba(255 255 255 / 0.96);
-  --line:     rgba(100 98 200 / 0.14);
-  --lineH:    rgba(124 58 237 / 0.55);
-  --ink:      #0d0c1e;
-  --ink2:     #4c4b6e;
-  --ink3:     #9998b8;
-  --vio:      #7c3aed;
-  --pur:      #6d28d9;
-  --blu:      #2563eb;
-  --ind:      #4f46e5;
-  --pnk:      #db2777;
-  --nav-bg:   rgba(242 241 255 / 0.88);
-  --glow:     0 0 24px rgba(124 58 237 / 0.20);
-  --glowH:    0 0 40px rgba(124 58 237 / 0.38);
-  --orb:      0.09;
-  --orb2:     0.05;
+  --bg: #f2f2f7;
+  --bg2: #eaeaf1;
+  --surface: rgba(255, 255, 255, 0.4);
+  --surfaceH: rgba(255, 255, 255, 0.6);
+  --line: rgba(100, 98, 200, 0.15);
+  --lineH: rgba(5, 150, 105, 0.6);
+  --ink: #0d0c1e;
+  --ink2: #4c4b6e;
+  --ink3: #9998b8;
+  --vio: #059669; /* Emerald */
+  --pur: #047857; /* Deep Emerald */
+  --blu: #0891b2; /* Cyan */
+  --ind: #2563eb; /* Blue */
+  --pnk: #7c3aed; /* Violet */
+  --nav-bg: rgba(249, 249, 251, 0.5);
+  --glow: 0 0 24px rgba(5, 150, 105, 0.3);
+  --glowH: 0 0 40px rgba(5, 150, 105, 0.5);
+  --orb: 0.35;
+  --orb2: 0.25;
 }
 
 /* ─── Reset + base ───────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   transition: background 0.3s, color 0.3s;
   min-height: 100vh;
 }
-img, svg { display: block; max-width: 100%; }
-a { text-decoration: none; }
-button { cursor: pointer; font-family: inherit; }
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ─── SPATIAL UI GLOBAL HACKS ────────────────────────── */
+/* Apply heavy glassmorphism to all elements using surface or nav backgrounds */
+[style*="--surface"],
+[style*="--nav-bg"],
+[style*="--bg2"],
+.spatial-glass {
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+}
+
+/* Enhanced 3D depth shadows for cards */
+div[style*="--surface"] {
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+button[style*="--surface"] {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+header[style*="--nav-bg"] {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+}
 
 /* ─── Scrollbar ──────────────────────────────────────── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(124,58,237,.38); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(168,85,247,.58); }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
-/* ─── Gradient text (background-clip, no Tailwind equiv) */
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, .38);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, .58);
+}
+
+/* ─── Gradient text (background-clip) ────────────────── */
 .gt {
   background: linear-gradient(135deg, var(--vio) 0%, var(--blu) 52%, var(--pnk) 100%);
   -webkit-background-clip: text;
@@ -76,27 +137,77 @@ button { cursor: pointer; font-family: inherit; }
 
 /* ─── Keyframes ──────────────────────────────────────── */
 @keyframes orb {
-  0%,100% { transform: translate(0,0) scale(1); }
-  33%      { transform: translate(32px,-42px) scale(1.07); }
-  66%      { transform: translate(-22px,26px) scale(0.94); }
-}
-@keyframes up {
-  from { opacity:0; transform: translateY(24px); }
-  to   { opacity:1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50%      { opacity:.3; transform:scale(1.6); }
-}
-@keyframes bar {
-  from { width: 0; }
-}
-@keyframes slideDown {
-  from { opacity:0; transform:translateY(-8px); }
-  to   { opacity:1; transform:translateY(0); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(32px, -42px) scale(1.07);
+  }
+
+  66% {
+    transform: translate(-22px, 26px) scale(0.94);
+  }
 }
 
-.a-up   { animation: up 0.6s ease both; }
-.a-dot  { animation: pulse 2s infinite; }
-.a-bar  { animation: bar 1.4s ease both; }
-.a-down { animation: slideDown 0.25s ease both; }
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .3;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes bar {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-up {
+  animation: up 0.6s ease both;
+}
+
+.a-dot {
+  animation: pulse 2s infinite;
+}
+
+.a-bar {
+  animation: bar 1.4s ease both;
+}
+
+.a-down {
+  animation: slideDown 0.25s ease both;
+}

@@ -156,26 +156,13 @@ const DEFAULT_PROJECTS = [
   // }
 ];
 
-/**
- * Load all projects from localStorage.
- * Falls back to DEFAULT_PROJECTS on first visit.
- */
-export function loadProjects() {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored);
-  } catch {
-    // If localStorage is corrupted, start fresh
-  }
-  return DEFAULT_PROJECTS;
-}
+let currentProjects = [...DEFAULT_PROJECTS];
 
 /**
- * Save the full projects array to localStorage.
- * Called internally after every mutation.
+ * Load all projects from memory.
  */
-function saveProjects(projects) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+export function loadProjects() {
+  return currentProjects;
 }
 
 /**
@@ -183,8 +170,6 @@ function saveProjects(projects) {
  * Returns the updated full array.
  */
 export function addProject(newProjectData) {
-  const projects = loadProjects();
-
   const project = {
     ...newProjectData,
     id: Date.now(),         // simple unique ID using timestamp
@@ -192,9 +177,8 @@ export function addProject(newProjectData) {
     year: new Date().getFullYear(),
   };
 
-  const updated = [...projects, project];
-  saveProjects(updated);
-  return updated;
+  currentProjects = [...currentProjects, project];
+  return currentProjects;
 }
 
 /**
@@ -202,10 +186,8 @@ export function addProject(newProjectData) {
  * Returns the updated full array.
  */
 export function editProject(id, updatedFields) {
-  const projects = loadProjects();
-  const updated = projects.map(p => p.id === id ? { ...p, ...updatedFields } : p);
-  saveProjects(updated);
-  return updated;
+  currentProjects = currentProjects.map(p => p.id === id ? { ...p, ...updatedFields } : p);
+  return currentProjects;
 }
 
 /**
@@ -213,24 +195,19 @@ export function editProject(id, updatedFields) {
  * Returns the updated full array.
  */
 export function deleteProject(id) {
-  const projects = loadProjects();
-  const updated = projects.filter(p => p.id !== id);
-  saveProjects(updated);
-  return updated;
+  currentProjects = currentProjects.filter(p => p.id !== id);
+  return currentProjects;
 }
 
 /**
  * Toggle the "featured" flag on a project.
- * Featured projects appear in the large bento slot.
  * Returns the updated full array.
  */
 export function toggleFeatured(id) {
-  const projects = loadProjects();
-  const updated = projects.map(p =>
+  currentProjects = currentProjects.map(p =>
     p.id === id ? { ...p, featured: !p.featured } : p
   );
-  saveProjects(updated);
-  return updated;
+  return currentProjects;
 }
 
 /**
@@ -238,6 +215,6 @@ export function toggleFeatured(id) {
  * Useful during development.
  */
 export function resetToDefaults() {
-  saveProjects(DEFAULT_PROJECTS);
-  return DEFAULT_PROJECTS;
+  currentProjects = [...DEFAULT_PROJECTS];
+  return currentProjects;
 }
